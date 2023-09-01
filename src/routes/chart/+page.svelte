@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-	<title>Chart</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Chart | Preliminary Assessment</title>
+	<meta name="description" content="Preliminary Assessment of Softwrd Ltd" />
 </svelte:head>
 <Chart />
 

@@ -10,13 +10,13 @@
 
 <div class="app">
 	<div class="min-h-screen relative font-mono">
-		<header id="header" class="container py-10 xl:py-12 text-sm">
+		<header id="header" class="container py-8 xl:py-12 text-sm">
 			<div
 				class="grid grid-cols-2 gap-y-8 justify-items-center md:justify-items-stretch md:items-center"
 			>
 				<div class="col-span-2 md:col-span-1 text-center md:text-left">
 					<a href="/">
-						<h1>Logo Here</h1>
+						<h1 class="text-3xl font-bold">SPT</h1>
 					</a>
 				</div>
 				<div class="col-span-2 md:col-span-1 text-center md:text-right">
@@ -39,7 +39,7 @@
 		<section id="content" class="pt-[25px] pb-[150px]">
 			<slot />
 		</section>
-		<footer id="footer" class="absolute w-full bottom-0 p-10">
+		<footer id="footer" class="absolute w-full bottom-0 p-8">
 			<p class="text-center text-sm tracking-[-0.5px]">
 				Feel free to drop a 'hello' @<!-- -->
 				<code class="font-bold"> almahmudkhalif@gmail.com </code>
