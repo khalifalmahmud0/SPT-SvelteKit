@@ -1,34 +1,38 @@
 <script>
+	import { page } from "$app/stores";
 	import "../app.css";
+	let menuItems = [
+		{ label: "Layout", path: "/" },
+		{ label: "Chart", path: "/chart" },
+		{ label: "Map", path: "/map" },
+	];
 </script>
 
 <div class="app">
 	<div class="min-h-screen relative font-mono">
-		<header id="header" class="Container py-10 xl:py-12 text-sm">
+		<header id="header" class="container py-10 xl:py-12 text-sm">
 			<div
 				class="grid grid-cols-2 gap-y-8 justify-items-center md:justify-items-stretch md:items-center"
 			>
-				<div class="col-span-2 md:col-span-1 text-center">
-					<!-- <a href="/"
-						><img
-							alt="Site Logo"
-							loading="lazy"
-							width="100"
-							height="100"
-							decoding="async"
-							data-nimg="1"
-							class="w-52 dark:invert"
-							style="color: transparent"
-							src="/logo.svg"
-						/></a
-					> -->
-					<h1>Logo Here</h1>
+				<div class="col-span-2 md:col-span-1 text-center md:text-left">
+					<a href="/">
+						<h1>Logo Here</h1>
+					</a>
 				</div>
 				<div class="col-span-2 md:col-span-1 text-center md:text-right">
-					<code class="font-bold"
-						><a href="/">All Users</a> /<!-- -->
-						<a href="/add-user">Add New User</a></code
-					>
+					<code class="font-bold">
+						{#each menuItems as menuItem, index}
+							<a
+								href={menuItem.path}
+								class:active={$page.url.pathname === menuItem.path}
+							>
+								{menuItem.label}
+								{#if index !== menuItems.length - 1}
+									/
+								{/if}
+							</a>
+						{/each}
+					</code>
 				</div>
 			</div>
 		</header>
@@ -45,4 +49,7 @@
 </div>
 
 <style>
+	.active {
+		@apply text-neutral-500;
+	}
 </style>

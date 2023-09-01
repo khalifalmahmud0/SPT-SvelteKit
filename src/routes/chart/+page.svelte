@@ -1,12 +1,12 @@
 <script>
-	import Layout from "../pages/Layout.svelte";
+	import Chart from "../../pages/Chart.svelte";
 </script>
 
 <svelte:head>
-	<title>Layout</title>
+	<title>Chart</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
-<Layout />
+<Chart />
 
 <style>
 </style>

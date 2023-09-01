@@ -1,12 +1,12 @@
 <script>
-	import Layout from "../pages/Layout.svelte";
+	import Map from "../../pages/Map.svelte";
 </script>
 
 <svelte:head>
-	<title>Layout</title>
+	<title>Map</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
-<Layout />
+<Map />
 
 <style>
 </style>
