@@ -1,67 +1,48 @@
 <script>
-	import { browser } from '$app/environment';
-	import { page } from '$app/stores';
-	import { webVitals } from '$lib/vitals';
-	import Header from './Header.svelte';
-	import './styles.css';
-
-	/** @type {import('./$types').LayoutServerData} */
-	export let data;
-
-	$: if (browser && data?.analyticsId) {
-		webVitals({
-			path: $page.url.pathname,
-			params: $page.params,
-			analyticsId: data.analyticsId
-		});
-	}
+	import "../app.css";
 </script>
 
 <div class="app">
-	<Header />
-
-	<main>
-		<slot />
-	</main>
-
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+	<div class="min-h-screen relative font-mono">
+		<header id="header" class="Container py-10 xl:py-12 text-sm">
+			<div
+				class="grid grid-cols-2 gap-y-8 justify-items-center md:justify-items-stretch md:items-center"
+			>
+				<div class="col-span-2 md:col-span-1 text-center">
+					<!-- <a href="/"
+						><img
+							alt="Site Logo"
+							loading="lazy"
+							width="100"
+							height="100"
+							decoding="async"
+							data-nimg="1"
+							class="w-52 dark:invert"
+							style="color: transparent"
+							src="/logo.svg"
+						/></a
+					> -->
+					<h1>Logo Here</h1>
+				</div>
+				<div class="col-span-2 md:col-span-1 text-center md:text-right">
+					<code class="font-bold"
+						><a href="/">All Users</a> /<!-- -->
+						<a href="/add-user">Add New User</a></code
+					>
+				</div>
+			</div>
+		</header>
+		<section id="content" class="pt-[25px] pb-[150px]">
+			<slot />
+		</section>
+		<footer id="footer" class="absolute w-full bottom-0 p-10">
+			<p class="text-center text-sm tracking-[-0.5px]">
+				Feel free to drop a 'hello' @<!-- -->
+				<code class="font-bold"> almahmudkhalif@gmail.com </code>
+			</p>
+		</footer>
+	</div>
 </div>
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
 </style>
