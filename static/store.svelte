@@ -7,25 +7,35 @@
 		ArcElement,
 		RadialLinearScale,
 	} from "chart.js";
-	import { onMount } from "svelte";
-	import { writable } from "svelte/store";
 	import { PolarArea } from "svelte-chartjs";
 	ChartJS.register(Title, Tooltip, Legend, ArcElement, RadialLinearScale);
-	const countryDataStore = writable([]);
 	const dataPolar = {
 		datasets: [
 			{
-				data: [],
-				backgroundColor: [],
+				data: [300, 50, 100, 40, 120, 500],
+				backgroundColor: [
+					"rgba(247, 70, 74, 0.5)",
+					"rgba(70, 191, 189, 0.5)",
+					"rgba(253, 180, 92, 0.5)",
+					"rgba(148, 159, 177, 0.5)",
+					"rgba(77, 83, 96, 0.5)",
+					"blue",
+				],
 			},
 		],
-		labels: [],
+		labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey", "blue"],
 	};
+	// :::::::::::
+	// Import necessary modules
+	import { onMount } from "svelte";
+	import { writable } from "svelte/store";
+	const countryDataStore = writable([]);
+	let extractedData;
 	async function fetchCountryData() {
 		try {
 			const response = await fetch("https://restcountries.com/v3.1/all");
 			const data = await response.json();
-			const extractedData = data.map((item) => {
+			extractedData = data.map((item) => {
 				return {
 					flag: item?.flags?.svg,
 					name: item?.name?.common,
@@ -39,25 +49,6 @@
 				};
 			});
 			countryDataStore.set(extractedData);
-			const top10Populations = extractedData
-				.sort((a, b) => b.populations - a.populations)
-				.slice(0, 10)
-				.map((item) => item.populations);
-			const top10CountryNames = extractedData
-				.sort((a, b) => b.populations - a.populations)
-				.slice(0, 10)
-				.map((item) => item.name);
-			const randomColors = Array.from(
-				{ length: 10 },
-				() =>
-					`rgba(${Math.random() * 255}, ${Math.random() * 255}, ${
-						Math.random() * 255
-					}, 0.5)`
-			);
-			console.log(randomColors);
-			dataPolar.datasets[0].data = top10Populations;
-			dataPolar.datasets[0].backgroundColor = randomColors;
-			dataPolar.labels = top10CountryNames;
 		} catch (error) {
 			console.error("Error fetching data:", error);
 		}
