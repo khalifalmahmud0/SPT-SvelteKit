@@ -3,7 +3,7 @@
 
 <section>
 	<div
-		class="grid grid-rows-12 md:grid-rows-6 grid-cols-4 md:grid-cols-12 h-screen md:h-full grid-flow-row md:grid-flow-col"
+		class="grid grid-rows-12 md:grid-rows-6 grid-cols-4 md:grid-cols-12 h-[calc(100vh-84px)] grid-flow-row md:grid-flow-col"
 	>
 		<div
 			class="bg-blue-400 text-center col-span-4 row-span-3 order-1 md:col-span-2 md:row-span-3 md:order-1"

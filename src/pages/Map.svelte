@@ -36,4 +36,4 @@
 	});
 </script>
 
-<section id="m_A_p" class="w-full h-screen" />
+<section id="m_A_p" class="w-full h-[calc(100vh-84px)]" />
