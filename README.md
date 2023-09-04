@@ -11,7 +11,7 @@ git@github.com:khalifalmahmud0/SPT-SvelteKit.git
 cd SPT-SvelteKit
 yarn  dev
 # or start the server and open the app in a new browser tab
-yarn dev -- --open
+yarn dev --open
 ```
 
 ## Live Link
