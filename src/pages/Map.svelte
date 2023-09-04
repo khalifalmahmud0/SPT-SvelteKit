@@ -17,10 +17,12 @@
 					source: new OSM(),
 				}),
 				new VectorLayer({
+					// Load Json Data
 					source: new VectorSource({
 						format: new GeoJSON(),
 						url: "countries.json",
 					}),
+					// Layer Style
 					style: new Style({
 						fill: new Fill({
 							color: "rgba(0, 106, 78, 0.75)", // Set the color to #006a4e with 0.75 opacity
@@ -36,4 +38,5 @@
 	});
 </script>
 
+<!-- Show Map Here  -->
 <section id="m_A_p" class="w-full h-[calc(100vh-84px)]" />

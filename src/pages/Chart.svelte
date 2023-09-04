@@ -12,6 +12,7 @@
 	import { PolarArea } from "svelte-chartjs";
 	ChartJS.register(Title, Tooltip, Legend, ArcElement, RadialLinearScale);
 	const countryDataStore = writable([]);
+	// Polar Data Empty Array
 	const dataPolar = {
 		datasets: [
 			{
@@ -23,8 +24,10 @@
 	};
 	async function fetchCountryData() {
 		try {
+			// Fetch Data From Api
 			const response = await fetch("https://restcountries.com/v3.1/all");
 			const data = await response.json();
+			// Data Mapping
 			const extractedData = data.map((item) => {
 				return {
 					flag: item?.flags?.svg,
@@ -39,14 +42,17 @@
 				};
 			});
 			countryDataStore.set(extractedData);
+			// Top 10 Countries Array by populations
 			const top10Populations = extractedData
 				.sort((a, b) => b.populations - a.populations)
 				.slice(0, 10)
 				.map((item) => item.populations);
+			// Top 10 Countries Array by name
 			const top10CountryNames = extractedData
 				.sort((a, b) => b.populations - a.populations)
 				.slice(0, 10)
 				.map((item) => item.name);
+			// Generate 10 random Color
 			const randomColors = Array.from(
 				{ length: 10 },
 				() =>
@@ -54,7 +60,7 @@
 						Math.random() * 255
 					}, 0.5)`
 			);
-			console.log(randomColors);
+			// Set Polar Data
 			dataPolar.datasets[0].data = top10Populations;
 			dataPolar.datasets[0].backgroundColor = randomColors;
 			dataPolar.labels = top10CountryNames;
@@ -70,6 +76,7 @@
 <section class="p-4">
 	<div class="container grid grid-cols-12 gap-6">
 		<div class="col-span-12 lg:col-span-8">
+			<!-- Country List  -->
 			<div class="border-gray-400 border rounded-md overflow-x-scroll">
 				<table class="w-full text-center">
 					<thead>
@@ -120,6 +127,7 @@
 			</div>
 		</div>
 		<div class="col-span-12 lg:col-span-4">
+			<!-- Polar Area Chart  -->
 			<div class="border-gray-400 border rounded-md">
 				<h1>Countries</h1>
 				<div class="py-6">

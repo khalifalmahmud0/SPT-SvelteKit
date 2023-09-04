@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <section>
 	<div
 		class="grid grid-rows-6 md:grid-rows-6 grid-cols-4 md:grid-cols-12 h-[calc(100vh-136px)] md:h-[calc(100vh-84px)] grid-flow-row md:grid-flow-col"
@@ -23,6 +20,7 @@
 		<div
 			class="bg-yellow-100 text-center grid justify-center content-center col-span-4 row-span-3 order-2 md:col-span-4 md:row-span-4 md:order-6"
 		>
+		<!-- Mountain View -->
 			<div
 				class=" grid justify-center content-center w-[300px] h-[300px] bg-[#293462]"
 			>
@@ -33,13 +31,13 @@
 					<div class="main_mountain2" />
 				</div>
 			</div>
+			<!-- Mountain View -->
 		</div>
 		<div
 			class="bg-emerald-400 text-center col-span-4 row-span-3 order-7 md:col-span-2 md:row-span-4 md:order-7"
 		/>
 	</div>
 </section>
-
 <style>
 	.mountain_circle {
 		position: relative;
