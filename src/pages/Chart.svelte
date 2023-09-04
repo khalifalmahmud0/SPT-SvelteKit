@@ -69,7 +69,7 @@
 
 <section class="p-4">
 	<div class="container grid grid-cols-12 gap-6">
-		<div class="col-span-12 md:col-span-8">
+		<div class="col-span-12 lg:col-span-8">
 			<div class="border-gray-400 border rounded-md overflow-x-scroll">
 				<table class="w-full text-center">
 					<thead>
@@ -119,8 +119,8 @@
 				</table>
 			</div>
 		</div>
-		<div class="col-span-12 md:col-span-4">
-			<div class="border-gray-400 border rounded-md overflow-x-scroll">
+		<div class="col-span-12 lg:col-span-4">
+			<div class="border-gray-400 border rounded-md">
 				<h1>Countries</h1>
 				<div class="py-6">
 					<PolarArea

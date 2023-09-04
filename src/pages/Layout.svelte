@@ -3,28 +3,28 @@
 
 <section>
 	<div
-		class="grid grid-rows-12 md:grid-rows-6 grid-cols-4 md:grid-cols-12 h-[calc(100vh-84px)] grid-flow-row md:grid-flow-col"
+		class="grid grid-rows-6 md:grid-rows-6 grid-cols-4 md:grid-cols-12 h-[calc(100vh-136px)] md:h-[calc(100vh-84px)] grid-flow-row md:grid-flow-col"
 	>
 		<div
-			class="bg-blue-400 text-center col-span-4 row-span-3 order-1 md:col-span-2 md:row-span-3 md:order-1"
+			class="bg-blue-400 text-center col-span-4 row-span-3 order-3 md:col-span-2 md:row-span-3 md:order-1"
 		/>
 		<div
-			class="bg-teal-400 text-center col-span-4 row-span-3 order-2 md:col-span-2 md:row-span-2 md:order-2"
+			class="bg-teal-400 text-center col-span-4 row-span-3 order-4 md:col-span-2 md:row-span-2 md:order-2"
 		/>
 		<div
 			class="bg-fuchsia-400 text-center col-span-4 row-span-3 order-5 md:col-span-6 md:row-span-1 md:order-3"
 		/>
 		<div
-			class="bg-rose-100 text-center col-span-4 row-span-3 order-3 md:col-span-4 md:row-span-5 md:order-4"
+			class="bg-rose-100 text-center col-span-4 row-span-3 order-1 md:col-span-4 md:row-span-5 md:order-4"
 		/>
 		<div
 			class="bg-blue-500 text-center col-span-4 row-span-3 order-6 md:col-span-6 md:row-span-2 md:order-5"
 		/>
 		<div
-			class="bg-yellow-100 text-center grid justify-center content-center col-span-4 row-span-3 order-4 md:col-span-4 md:row-span-4 md:order-6"
+			class="bg-yellow-100 text-center grid justify-center content-center col-span-4 row-span-3 order-2 md:col-span-4 md:row-span-4 md:order-6"
 		>
 			<div
-				class=" grid justify-center content-center w-[300px] h-[300px] m-16 bg-[#293462]"
+				class=" grid justify-center content-center w-[300px] h-[300px] bg-[#293462]"
 			>
 				<div
 					class="mountain_circle w-[200px] h-[200px] bg-yellow-100 rounded-full"
